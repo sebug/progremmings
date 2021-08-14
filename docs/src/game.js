@@ -1,7 +1,11 @@
 /* The game */
-const k = kaboom();
+const k = kaboom({
+    fullscreen: true,
+    scale: 1,
+    debug: true
+});
 
-k.add([
-    k.text("Hello 'grammer", 32),
-    k.pos(100, 100)
-]);
+k.scene('game', () => {
+});
+
+start('game');
