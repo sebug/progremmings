@@ -20,8 +20,25 @@ k.loadSprite('pipe-top-right','pipe-top-right.png');
 k.loadSprite('pipe-bottom-left', 'pipe-bottom-left.png');
 k.loadSprite('pipe-bottom-right', 'pipe-bottom-right.png');
 
-k.scene('game', () => {
-    k.layers(['bg','obj', 'ui'], 'obj');
-});
+k.layers(['bg','obj', 'ui'], 'obj');
 
-start('game');
+k.camIgnore(['ui']);
+
+const map = [
+    '                                                 ',
+    '                                                 ',
+    '                                                 ',
+    '                                                 ',
+    '                                                 ',
+    '                                                 ',
+    '===================================  ============'
+];
+
+const levelCfg = {
+    width: 20,
+    height: 20,
+    '=': [k.sprite('block'), k.solid()]
+};
+
+const gameLevel = k.addLevel(map, levelCfg);
+
